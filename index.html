@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ברזילי אירועים ונופש — פסטיבלי מורשת ונופש מאורגן לגמלאים</title>
+<meta name="description" content="עסק משפחתי ותיק עם עשרות שנים של ניסיון בהפקת פסטיבלי מורשת, חגיגות ונופש מאורגן לקהל הגמלאים — פרטיים ומוסדיים, בכל רחבי הארץ. מזמורי תימן, פניני מרוקו, יום האישה ועוד." />
+
+<meta property="og:title" content="ברזילי אירועים ונופש" />
+<meta property="og:description" content="פסטיבלי מורשת ונופש מאורגן לקהל הגמלאים — עשרות שנים של ניסיון ומעטפת מלאה לכל נוסע." />
+<meta property="og:locale" content="he_IL" />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --parchment:#F5ECD8;
+    --parchment-deep:#EADFC4;
+    --teal:#0E3B37;
+    --teal-soft:#15514B;
+    --teal-line:#2C645D;
+    --gold:#C69A3E;
+    --gold-bright:#E3BC5E;
+    --pom:#8C2B2C;
+    --ink:#221C15;
+    --ink-soft:#4A4034;
+    --cream-card:#FBF6EA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Assistant',system-ui,sans-serif;
+    background:var(--parchment);color:var(--ink);
+    font-size:19px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Frank Ruhl Libre',serif;line-height:1.15;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{width:min(1080px,92vw);margin-inline:auto;}
+
+  .khatam{display:inline-block;width:1em;height:1em;background:currentColor;
+    clip-path:polygon(50% 0,61% 24%,86% 14%,76% 39%,100% 50%,76% 61%,86% 86%,61% 76%,50% 100%,39% 76%,14% 86%,24% 61%,0 50%,24% 39%,14% 14%,39% 24%);}
+
+  /* top bar */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(14,59,55,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--teal-line);}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+  .brand-mini{display:flex;align-items:center;gap:10px;color:var(--gold-bright);font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:20px;}
+  .brand-mini .khatam{color:var(--gold);width:20px;height:20px;}
+  .topbar nav{display:flex;gap:24px;font-weight:600;font-size:16px;color:#EDE3CA;}
+  .topbar nav a{padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;}
+  .topbar nav a:hover,.topbar nav a:focus-visible{color:var(--gold-bright);border-color:var(--gold);}
+  @media(max-width:820px){.topbar nav{display:none;}}
+
+  /* hero */
+  .hero{position:relative;background:radial-gradient(120% 90% at 50% -10%, #16544D 0%, var(--teal) 55%, #0A2E2B 100%);color:var(--parchment);text-align:center;padding:66px 0 88px;overflow:hidden;}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.10;pointer-events:none;
+    background-image:linear-gradient(45deg,var(--gold) 1px,transparent 1px),linear-gradient(-45deg,var(--gold) 1px,transparent 1px);
+    background-size:34px 34px;mask-image:radial-gradient(120% 100% at 50% 0,#000 30%,transparent 78%);}
+  .hero .wrap{position:relative;}
+  .hero-logo{width:min(360px,80vw);margin:0 auto 24px;background:#FAF4E6;border-radius:20px;padding:22px 26px;
+    border:1px solid rgba(198,154,62,.55);box-shadow:0 14px 38px rgba(0,0,0,.3);}
+  .hero-logo img{width:100%;display:block;}
+  .eyebrow{font-weight:600;letter-spacing:.12em;font-size:14px;color:var(--gold-bright);margin-bottom:16px;}
+  .eyebrow .sep{opacity:.5;margin:0 7px;}
+  .hero h1{font-weight:900;font-size:clamp(38px,7vw,72px);color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.25);letter-spacing:-.01em;}
+  .hero .lead{font-size:clamp(18px,2.3vw,22px);color:#EBE1C7;font-weight:400;max-width:680px;margin:20px auto 0;line-height:1.6;}
+  .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px;}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:19px;padding:16px 30px;border-radius:999px;min-height:56px;
+    transition:transform .18s,box-shadow .18s,background .18s;}
+  .btn svg{width:22px;height:22px;flex:none;}
+  .btn-wa{background:var(--gold);color:var(--teal);box-shadow:0 8px 24px rgba(198,154,62,.35);}
+  .btn-wa:hover,.btn-wa:focus-visible{background:var(--gold-bright);transform:translateY(-2px);box-shadow:0 12px 30px rgba(198,154,62,.45);}
+  .btn-call{background:transparent;color:#fff;border:2px solid rgba(245,236,216,.5);}
+  .btn-call:hover,.btn-call:focus-visible{border-color:var(--gold-bright);color:var(--gold-bright);transform:translateY(-2px);}
+
+  /* trust strip */
+  .trust{background:var(--teal-soft);color:#EDE3CA;border-top:1px solid var(--teal-line);}
+  .trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 40px;padding:18px 0;text-align:center;}
+  .trust b{color:var(--gold-bright);font-weight:700;}
+  .trust span{font-size:16px;display:inline-flex;align-items:center;gap:9px;}
+  .trust .khatam{color:var(--gold);width:13px;height:13px;}
+
+  /* section shell */
+  .sec{padding:76px 0;}
+  .sec-head{text-align:center;margin-bottom:44px;}
+  .kicker{color:var(--pom);font-weight:700;letter-spacing:.07em;font-size:15px;margin-bottom:12px;}
+  .sec-head h2{font-size:clamp(28px,4vw,40px);color:var(--teal);font-weight:700;}
+  .sec-head p{color:var(--ink-soft);font-size:18px;margin-top:10px;max-width:640px;margin-inline:auto;}
+
+  /* about */
+  .about{text-align:center;padding-bottom:44px;}
+  .about p{max-width:720px;margin:0 auto 16px;font-size:20px;color:var(--ink-soft);line-height:1.72;}
+  .about .rule{width:64px;height:2px;background:var(--gold);margin:30px auto 0;position:relative;}
+  .about .rule::before{content:"";position:absolute;top:-5px;right:50%;transform:translateX(50%);width:12px;height:12px;background:var(--gold);
+    clip-path:polygon(50% 0,61% 24%,86% 14%,76% 39%,100% 50%,76% 61%,86% 86%,61% 76%,50% 100%,39% 76%,14% 86%,24% 61%,0 50%,24% 39%,14% 14%,39% 24%);}
+
+  /* care / wraparound */
+  .care{background:var(--parchment-deep);}
+  .care-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:820px){.care-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:520px){.care-grid{grid-template-columns:1fr;}}
+  .care-card{background:var(--cream-card);border:1px solid #E0D3B4;border-radius:16px;padding:26px 22px;text-align:right;
+    display:flex;gap:16px;align-items:flex-start;transition:transform .2s,box-shadow .2s;}
+  .care-card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(14,59,55,.1);}
+  .care-ic{flex:none;width:48px;height:48px;border-radius:12px;background:var(--teal);display:flex;align-items:center;justify-content:center;}
+  .care-ic svg{width:26px;height:26px;stroke:var(--gold-bright);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+  .care-card h3{font-size:20px;color:var(--teal);font-weight:900;margin-bottom:4px;}
+  .care-card p{font-size:16px;color:var(--ink-soft);line-height:1.5;}
+
+  /* productions */
+  .arches{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  @media(max-width:860px){.arches{grid-template-columns:1fr;max-width:420px;margin-inline:auto;}}
+  .arch{background:var(--cream-card);border:1px solid var(--parchment-deep);border-radius:50% 50% 18px 18px / 22% 22% 18px 18px;
+    padding:44px 26px 30px;text-align:center;position:relative;box-shadow:0 10px 30px rgba(14,59,55,.07);
+    transition:transform .25s,box-shadow .25s,border-color .25s;overflow:hidden;}
+  .arch::before{content:"";position:absolute;inset:12px 12px 12px;border:1.5px solid rgba(198,154,62,.4);
+    border-radius:50% 50% 12px 12px / 26% 26% 12px 12px;pointer-events:none;}
+  .arch:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(14,59,55,.16);border-color:var(--gold);}
+  .arch .top-star{color:var(--gold);width:28px;height:28px;margin:6px auto 16px;}
+  .arch h3{font-size:27px;color:var(--teal);font-weight:900;margin-bottom:4px;}
+  .arch .tagline{color:var(--pom);font-weight:600;font-size:15px;margin-bottom:14px;}
+  .arch p{color:var(--ink-soft);font-size:17px;line-height:1.6;min-height:96px;}
+  .follow{display:inline-flex;align-items:center;gap:9px;margin-top:18px;background:var(--teal);color:var(--parchment);
+    font-weight:700;font-size:17px;padding:13px 24px;border-radius:999px;min-height:50px;transition:background .18s,transform .18s;}
+  .follow svg{width:19px;height:19px;fill:var(--gold-bright);}
+  .follow:hover,.follow:focus-visible{background:var(--teal-soft);transform:translateY(-2px);}
+
+  /* gallery */
+  .gallery{background:var(--parchment-deep);}
+  .carousel{position:relative;max-width:1000px;margin-inline:auto;}
+  .car-viewport{overflow:hidden;border-radius:16px;}
+  .car-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1);}
+  .slide{flex:0 0 calc(100% / var(--vis));padding:0 10px;box-sizing:border-box;}
+  .slide-inner{position:relative;border-radius:14px;overflow:hidden;cursor:zoom-in;
+    box-shadow:0 8px 24px rgba(14,59,55,.16);background:var(--cream-card);}
+  .slide-inner img{display:block;width:100%;height:500px;object-fit:cover;object-position:top;}
+  .slide-inner .cap{position:absolute;inset-inline:0;bottom:0;padding:24px 16px 12px;color:#fff;font-weight:700;font-size:17px;
+    text-align:right;direction:rtl;background:linear-gradient(0deg,rgba(10,46,43,.92),transparent);}
+  .slide-inner .cap small{display:block;font-weight:400;font-size:13px;color:var(--gold-bright);margin-top:2px;}
+  @media(max-width:520px){.slide-inner img{height:430px;}}
+
+  .car-arrow{position:absolute;top:calc(250px - 26px);z-index:5;width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;
+    background:var(--teal);color:var(--gold-bright);font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 18px rgba(14,59,55,.35);transition:background .18s,transform .18s;}
+  .car-arrow:hover{background:var(--teal-soft);transform:scale(1.06);}
+  .car-arrow.next{left:-6px;}
+  .car-arrow.prev{right:-6px;}
+  @media(max-width:520px){.car-arrow{top:calc(215px - 24px);width:44px;height:44px;font-size:26px;}}
+
+  .car-dots{display:flex;justify-content:center;gap:9px;margin-top:22px;}
+  .car-dots button{width:11px;height:11px;border-radius:50%;border:none;cursor:pointer;padding:0;background:#C3B48F;transition:background .2s,transform .2s;}
+  .car-dots button.on{background:var(--teal);transform:scale(1.25);}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(10,25,23,.92);display:none;align-items:center;justify-content:center;padding:24px;}
+  .lb.open{display:flex;}
+  .lb img{max-width:min(92vw,620px);max-height:90vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+  .lb-close{position:absolute;top:18px;left:18px;width:48px;height:48px;border-radius:50%;border:none;background:rgba(245,236,216,.15);
+    color:#fff;font-size:26px;cursor:pointer;line-height:1;}
+  .lb-close:hover{background:rgba(245,236,216,.3);}
+
+  /* partners */
+  .partners{text-align:center;padding:56px 0;}
+  .partners .kicker{margin-bottom:8px;}
+  .partners h2{font-size:clamp(22px,3vw,30px);color:var(--teal);font-weight:700;margin-bottom:26px;}
+  .plist{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
+  .plist span{background:var(--cream-card);border:1px solid var(--parchment-deep);border-radius:999px;padding:11px 22px;
+    font-weight:600;font-size:17px;color:var(--teal);}
+
+  /* updates band */
+  .updates{background:radial-gradient(120% 120% at 50% 0,#15514B,var(--teal) 70%);color:var(--parchment);text-align:center;padding:64px 0;}
+  .updates h2{font-size:clamp(26px,4vw,38px);color:#fff;font-weight:700;}
+  .updates p{color:#EBE1C7;font-size:19px;max-width:600px;margin:14px auto 30px;}
+  .row-chip{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .chip{display:inline-flex;align-items:center;gap:9px;background:rgba(245,236,216,.08);border:1.5px solid rgba(227,188,94,.5);
+    color:#F5ECD8;font-weight:600;font-size:16px;padding:12px 22px;border-radius:999px;min-height:48px;transition:background .18s,border-color .18s,transform .18s;}
+  .chip svg{width:18px;height:18px;fill:var(--gold-bright);}
+  .chip:hover,.chip:focus-visible{background:rgba(227,188,94,.16);border-color:var(--gold-bright);transform:translateY(-2px);}
+
+  /* footer */
+  footer{background:var(--ink);color:#E9DFCB;padding:60px 0 34px;text-align:center;}
+  footer .khatam{color:var(--gold);width:26px;height:26px;margin-bottom:14px;}
+  footer h2{font-family:'Frank Ruhl Libre',serif;color:var(--gold-bright);font-size:30px;font-weight:700;margin-bottom:8px;}
+  footer .sub{color:#B9AE97;margin-bottom:30px;}
+  .contact-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:34px;}
+  .contact-row a{display:inline-flex;align-items:center;gap:11px;font-weight:700;font-size:19px;padding:15px 28px;border-radius:999px;min-height:54px;}
+  .c-wa{background:var(--gold);color:var(--ink);}
+  .c-wa:hover,.c-wa:focus-visible{background:var(--gold-bright);}
+  .c-call{background:transparent;color:#E9DFCB;border:2px solid rgba(233,223,203,.35);}
+  .c-call:hover,.c-call:focus-visible{border-color:var(--gold-bright);color:var(--gold-bright);}
+  .contact-row svg{width:22px;height:22px;}
+  .foot-note{color:#8E836D;font-size:14px;border-top:1px solid #352C22;padding-top:22px;}
+  .foot-note b{color:#B9AE97;}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .emblem .khatam{animation:none;}html{scroll-behavior:auto;}
+  }
+  :focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px;border-radius:6px;}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand-mini" href="#top"><span class="khatam"></span>ברזילי אירועים ונופש</a>
+    <nav>
+      <a href="#about">אודות</a>
+      <a href="#care">המעטפת שלנו</a>
+      <a href="#prod">ההפקות</a>
+      <a href="#gallery">גלריה</a>
+      <a href="#contact">צרו קשר</a>
+    </nav>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-logo"><img src="assets/logo.png" alt="ברזילי אירועים ונופש — Barzilay Events & Travel" /></div>
+    <div class="eyebrow">עסק משפחתי<span class="sep">·</span>עשרות שנים של ניסיון<span class="sep">·</span>בכל רחבי הארץ</div>
+    <h1>ברזילי אירועים ונופש</h1>
+    <p class="lead">פסטיבלי מורשת, חגיגות ונופש מאורגן לקהל הגמלאים — פרטיים ומוסדיים — בכל רחבי הארץ. עם יחס אישי, ליווי צמוד ומעטפת מלאה לכל נוסע.</p>
+    <div class="cta-row">
+      <a class="btn btn-wa" href="https://wa.me/972544265720" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.13c-.24.68-1.42 1.32-1.96 1.36-.5.05-.5.41-3.16-.66-2.66-1.07-4.32-3.8-4.45-3.97-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.9.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.24.58.81 2 .88 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.27.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.22 1.38.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.5.31.07.11.07.64-.17 1.32Z"/></svg>
+        שלחו הודעה בוואטסאפ
+      </a>
+      <a class="btn btn-call" href="tel:+97235590765">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8Z"/></svg>
+        03-559-0765
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- trust strip -->
+<div class="trust">
+  <div class="wrap">
+    <span><span class="khatam"></span>עסק <b>משפחתי</b>, עשרות שנים של ניסיון</span>
+    <span><span class="khatam"></span>הפקות <b>בכל רחבי הארץ</b></span>
+    <span><span class="khatam"></span>הרשמה <b>ללא דמי ביטול</b></span>
+  </div>
+</div>
+
+<!-- about -->
+<section class="sec about reveal" id="about">
+  <div class="wrap">
+    <div class="kicker">מי אנחנו</div>
+    <h2>מסורת של חגיגה, כבר עשרות שנים</h2>
+    <p>ברזילי אירועים ונופש הוא עסק משפחתי ותיק, עם עשרות שנים של ניסיון בהפקת פסטיבלי מורשת, חגיגות ונופש מאורגן — המתמחה בקהל הגמלאים, פרטיים ומוסדיים כאחד, בכל רחבי הארץ.</p>
+    <p>אנחנו עושים שמח: הופעות של מיטב האמנים, חפלות ומסיבות, הרצאות וסדנאות איכותיות, טיולים מודרכים, דוכני מכירות וטקסים מסורתיים — הכל באווירה חמה, במיטב מלונות הנופש בישראל, עם ליווי צמוד ותשומת לב לכל פרט.</p>
+    <div class="rule"></div>
+  </div>
+</section>
+
+<!-- care / wraparound -->
+<section class="sec care reveal" id="care">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">הבטחה שלנו</div>
+      <h2>המעטפת המלאה שלנו</h2>
+      <p>אנחנו יודעים שאנחנו מארחים גמלאים — ולכן עוטפים כל נוסע במעטפת מלאה של ביטחון ותשומת לב, מהרגע שיוצא מהבית ועד שהוא חוזר אליו.</p>
+    </div>
+    <div class="care-grid">
+
+      <div class="care-card">
+        <div class="care-ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg></div>
+        <div><h3>ביטוח נסיעות מלא</h3><p>לכל נוסע, בכל הפקה — ראש שקט לאורך כל הדרך.</p></div>
+      </div>
+
+      <div class="care-card">
+        <div class="care-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+        <div><h3>טלפון זמין 24/7</h3><p>אנשי הצוות שלנו זמינים עבורכם לאורך כל הנופש, יומם ולילה.</p></div>
+      </div>
+
+      <div class="care-card">
+        <div class="care-ic"><svg viewBox="0 0 24 24"><path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4V8z"/><path d="M14 6l-5 12"/></svg></div>
+        <div><h3>הרשמה ללא דמי ביטול</h3><p>נרשמים בראש שקט. אנחנו שומרים על הרשמה גמישה, במיוחד עבור קהל הגמלאים.</p></div>
+      </div>
+
+      <div class="care-card">
+        <div class="care-ic"><svg viewBox="0 0 24 24"><path d="M4 16V7a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9"/><path d="M17 8h2.5L21 11v5h-4"/><circle cx="7.5" cy="16.5" r="1.6"/><circle cx="16.5" cy="16.5" r="1.6"/></svg></div>
+        <div><h3>אוטובוסים מפוארים</h3><p>הסעות הלוך ושוב ממרכזי הערים — בנוחות ובבטחה, עד פתח המלון.</p></div>
+      </div>
+
+      <div class="care-card">
+        <div class="care-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg></div>
+        <div><h3>ליווי צמוד</h3><p>צוות ברזילי איתכם לכל אורך הנופש — מהבית ועד הבית.</p></div>
+      </div>
+
+      <div class="care-card">
+        <div class="care-ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.3 4.9 5.4.7-4 3.7 1 5.3L12 15.9 7.3 18.6l1-5.3-4-3.7 5.4-.7L12 3z"/></svg></div>
+        <div><h3>חוויה מלאה</h3><p>הופעות מיטב האמנים, חפלות, הרצאות, טיולים ודוכני מכירות — בכל הפקה.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- productions -->
+<section class="sec" id="prod">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">קווי המוצר שלנו</div>
+      <h2>ההפקות שלנו</h2>
+      <p>לכל עולם תוכן עמוד פייסבוק משלו — עקבו כדי להתעדכן בהפקה הבאה</p>
+    </div>
+    <div class="arches">
+
+      <article class="arch reveal">
+        <span class="khatam top-star"></span>
+        <h3>מזמורי תימן</h3>
+        <div class="tagline">פסטיבל המורשת התימני</div>
+        <p>פיוט, זמר וחגיגה של מסורת תימן — בהפקות מרכזיות במלונות הנופש, עם מיטב האמנים ובאווירה מרוממת.</p>
+        <a class="follow" href="https://www.facebook.com/barzilaytiamnim/?locale=he_IL" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+          עקבו בפייסבוק
+        </a>
+      </article>
+
+      <article class="arch reveal">
+        <span class="khatam top-star"></span>
+        <h3>פניני מרוקו</h3>
+        <div class="tagline">הפקת הדגל · המורשת המרוקאית</div>
+        <p>פסטיבל תוסס וצבעוני של מורשת מרוקו, עם מיטב האמנים מהארץ ומחו"ל, חפלות לאורך היום וכיבוד עשיר.</p>
+        <a class="follow" href="https://www.facebook.com/barzilaymorocco/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+          עקבו בפייסבוק
+        </a>
+      </article>
+
+      <article class="arch reveal">
+        <span class="khatam top-star"></span>
+        <h3>אירועים והפקות</h3>
+        <div class="tagline">כל השאר, כל השנה</div>
+        <p>יום האישה, פסטיבל הזמר והצחוק, פסטיבלי סליחות, ימי כיף וטיולים מאורגנים — לאורך כל השנה ובכל רחבי הארץ.</p>
+        <a class="follow" href="https://www.facebook.com/profile.php?id=61591387936775" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+          עקבו בפייסבוק
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- gallery -->
+<section class="sec gallery reveal" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">רגעים מהשטח</div>
+      <h2>מהפקות אחרונות</h2>
+      <p>הצצה להפקות שלנו מהתקופה האחרונה — לחצו להגדלה</p>
+    </div>
+    <div class="carousel" id="carousel" style="--vis:3">
+      <button class="car-arrow next" id="carNext" aria-label="הבא">‹</button>
+      <button class="car-arrow prev" id="carPrev" aria-label="הקודם">›</button>
+      <div class="car-viewport" dir="ltr">
+        <div class="car-track" id="track">
+          <div class="slide"><div class="slide-inner" onclick="openLb('assets/morocco-eilat.jpg')"><img loading="lazy" src="assets/morocco-eilat.jpg" alt="פסטיבל פניני מרוקו באילת"><span class="cap">פניני מרוקו<small>אילת · לאונרדו קלאב</small></span></div></div>
+          <div class="slide"><div class="slide-inner" onclick="openLb('assets/teiman-tiberias.jpg')"><img loading="lazy" src="assets/teiman-tiberias.jpg" alt="פסטיבל מזמורי תימן בטבריה"><span class="cap">מזמורי תימן<small>טבריה · לאונרדו קלאב</small></span></div></div>
+          <div class="slide"><div class="slide-inner" onclick="openLb('assets/teiman-deadsea.jpg')"><img loading="lazy" src="assets/teiman-deadsea.jpg" alt="פסטיבל מזמורי תימן בים המלח"><span class="cap">מזמורי תימן<small>ים המלח · באופי הסליחות</small></span></div></div>
+          <div class="slide"><div class="slide-inner" onclick="openLb('assets/womensday-eilat.jpg')"><img loading="lazy" src="assets/womensday-eilat.jpg" alt="חגיגות יום האישה באילת"><span class="cap">חגיגות יום האישה<small>אילת · לאונרדו קלאב</small></span></div></div>
+          <div class="slide"><div class="slide-inner" onclick="openLb('assets/zemer-vetzhok.jpg')"><img loading="lazy" src="assets/zemer-vetzhok.jpg" alt="פסטיבל הזמר והצחוק בנתניה"><span class="cap">פסטיבל הזמר והצחוק<small>נתניה · רמדה</small></span></div></div>
+          <div class="slide"><div class="slide-inner" onclick="openLb('assets/hanukah-dayfun.jpg')"><img loading="lazy" src="assets/hanukah-dayfun.jpg" alt="יום כיף חנוכה"><span class="cap">יום כיף חנוכה<small>מסיבת חנוכה חגיגית</small></span></div></div>
+        </div>
+      </div>
+      <div class="car-dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- partners -->
+<section class="partners reveal">
+  <div class="wrap">
+    <div class="kicker">שותפים לדרך</div>
+    <h2>אנחנו עובדים עם מיטב רשתות המלונות בישראל</h2>
+    <div class="plist">
+      <span>פתאל</span>
+      <span>ישרוטל</span>
+      <span>אסטרל</span>
+      <span>קנדה ישראל</span>
+      <span>בראון</span>
+      <span>דוד ים המלח</span>
+      <span>הרברט סמואל</span>
+    </div>
+  </div>
+</section>
+
+<!-- updates band -->
+<section class="updates reveal" id="updates">
+  <div class="wrap">
+    <h2>רוצים לדעת מה ההפקה הבאה?</h2>
+    <p>אנחנו מעלים כל פלייר חדש לעמודי הפייסבוק שלנו. עקבו אחרי העמוד שמעניין אתכם — ותהיו הראשונים לדעת.</p>
+    <div class="row-chip">
+      <a class="chip" href="https://www.facebook.com/barzilaytiamnim/?locale=he_IL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+        מזמורי תימן
+      </a>
+      <a class="chip" href="https://www.facebook.com/barzilaymorocco/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+        פניני מרוקו
+      </a>
+      <a class="chip" href="https://www.facebook.com/profile.php?id=61591387936775" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+        אירועים והפקות
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- footer / contact -->
+<footer id="contact">
+  <div class="wrap">
+    <span class="khatam"></span>
+    <h2>מתעניינים? דברו איתנו</h2>
+    <p class="sub">נשמח לספר לכם על ההפקה הבאה ולשריין לכם מקום.</p>
+    <div class="contact-row">
+      <a class="c-wa" href="https://wa.me/972544265720" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.13c-.24.68-1.42 1.32-1.96 1.36-.5.05-.5.41-3.16-.66-2.66-1.07-4.32-3.8-4.45-3.97-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.9.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.24.58.81 2 .88 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.27.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.22 1.38.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.5.31.07.11.07.64-.17 1.32Z"/></svg>
+        וואטסאפ · 054-426-5720
+      </a>
+      <a class="c-call" href="tel:+97235590765">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8Z"/></svg>
+        טלפון · 03-559-0765
+      </a>
+    </div>
+    <p class="foot-note"><b>ברזילי אירועים ונופש</b> — פסטיבלי מורשת ונופש מאורגן לקהל הגמלאים · הרשמה ללא דמי ביטול · כל הזכויות שמורות</p>
+  </div>
+</footer>
+
+<!-- lightbox -->
+<div class="lb" id="lb" onclick="closeLb(event)">
+  <button class="lb-close" onclick="closeLb(event)" aria-label="סגירה">×</button>
+  <img id="lbImg" src="" alt="הגדלת פלייר" />
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
+  function openLb(src){ lbImg.src = src; lb.classList.add('open'); document.body.style.overflow='hidden'; stopAuto(); }
+  function closeLb(e){ if(e.target===lb || e.target.classList.contains('lb-close')){ lb.classList.remove('open'); document.body.style.overflow=''; startAuto(); } }
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ lb.classList.remove('open'); document.body.style.overflow=''; startAuto(); } });
+
+  /* ---- carousel ---- */
+  const carousel = document.getElementById('carousel');
+  const track = document.getElementById('track');
+  const dotsWrap = document.getElementById('dots');
+  const total = track.children.length;
+  let idx = 0, vis = 3, timer = null;
+
+  function calcVis(){ return window.innerWidth <= 860 ? 1 : (window.innerWidth <= 1200 ? 2 : 3); }
+  function maxIdx(){ return Math.max(0, total - vis); }
+
+  function buildDots(){
+    dotsWrap.innerHTML = '';
+    for(let i=0;i<=maxIdx();i++){
+      const b = document.createElement('button');
+      b.setAttribute('aria-label','מעבר לשקופית '+(i+1));
+      b.onclick = ()=>{ idx=i; render(); restartAuto(); };
+      dotsWrap.appendChild(b);
+    }
+  }
+  function render(){
+    carousel.style.setProperty('--vis', vis);
+    track.style.transform = 'translateX(-' + (idx * (100/vis)) + '%)';
+    [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('on', i===idx));
+  }
+  function next(){ idx = idx >= maxIdx() ? 0 : idx+1; render(); }
+  function prev(){ idx = idx <= 0 ? maxIdx() : idx-1; render(); }
+
+  function startAuto(){ if(!timer) timer = setInterval(next, 4000); }
+  function stopAuto(){ if(timer){ clearInterval(timer); timer=null; } }
+  function restartAuto(){ stopAuto(); startAuto(); }
+
+  document.getElementById('carNext').onclick = ()=>{ next(); restartAuto(); };
+  document.getElementById('carPrev').onclick = ()=>{ prev(); restartAuto(); };
+  carousel.addEventListener('mouseenter', stopAuto);
+  carousel.addEventListener('mouseleave', startAuto);
+  carousel.addEventListener('focusin', stopAuto);
+  carousel.addEventListener('focusout', startAuto);
+
+  function setup(){
+    const v = calcVis();
+    if(v !== vis){ vis = v; if(idx > maxIdx()) idx = maxIdx(); buildDots(); }
+    render();
+  }
+  window.addEventListener('resize', setup);
+  setup();
+  startAuto();
+</script>
+
+</body>
+</html>
