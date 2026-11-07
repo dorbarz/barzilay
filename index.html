@@ -10,6 +10,14 @@
 <meta property="og:description" content="פסטיבלי מורשת ונופש מאורגן לקהל הגמלאים — עשרות שנים של ניסיון ומעטפת מלאה לכל נוסע." />
 <meta property="og:locale" content="he_IL" />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://dorbarz.github.io/barzilay/" />
+<meta property="og:image" content="https://dorbarz.github.io/barzilay/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="theme-color" content="#0E3B37" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"ברזילי אירועים ונופש","alternateName":"Barzilay Events & Travel","url":"https://dorbarz.github.io/barzilay/","logo":"https://dorbarz.github.io/barzilay/logo.png","telephone":"+972-3-559-0765","email":"info@barzilay-e.com","areaServed":"IL","sameAs":["https://www.facebook.com/barzilaymorocco/","https://www.facebook.com/barzilaytiamnim/","https://www.facebook.com/profile.php?id=61591387936775"]}</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -122,7 +130,11 @@
   .arch .top-star{color:var(--gold);width:28px;height:28px;margin:6px auto 16px;}
   .arch h3{font-size:1.6875rem;color:var(--teal);font-weight:900;margin-bottom:4px;}
   .arch .tagline{color:var(--pom);font-weight:600;font-size:.9375rem;margin-bottom:14px;}
-  .arch p{color:var(--ink-soft);font-size:1.0625rem;line-height:1.6;min-height:96px;}
+  .arch{display:flex;flex-direction:column;align-items:center;}
+  .arch p{color:var(--ink-soft);font-size:1.0625rem;line-height:1.6;}
+  .arch .tagline{color:var(--pom);}
+  .arch .follow{margin-top:auto;}
+  .arch .follow-gap{flex:1;min-height:18px;}
   .follow{display:inline-flex;align-items:center;gap:9px;margin-top:18px;background:var(--teal);color:var(--parchment);
     font-weight:700;font-size:1.0625rem;padding:13px 24px;border-radius:999px;min-height:50px;transition:background .18s,transform .18s;}
   .follow svg{width:19px;height:19px;fill:var(--gold-bright);}
@@ -222,6 +234,7 @@
     .reveal{opacity:1;transform:none;transition:none;}
     html{scroll-behavior:auto;}
   }
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
   :focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px;border-radius:6px;}
   html.a11y-light :focus-visible,html.a11y-hc :focus-visible{outline-color:#ffdd00;}
 </style>
@@ -334,6 +347,7 @@
         <h3>מזמורי תימן</h3>
         <p class="tagline">פסטיבל המורשת התימני</p>
         <p>פיוט, זמר וחגיגה של מסורת תימן — בהפקות מרכזיות במלונות הנופש, עם מיטב האמנים ובאווירה מרוממת.</p>
+        <span class="follow-gap" aria-hidden="true"></span>
         <a class="follow" href="https://www.facebook.com/barzilaytiamnim/?locale=he_IL" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
           עקבו בפייסבוק<span class="sr-only"> — פסטיבל מזמורי תימן</span>
@@ -344,6 +358,7 @@
         <h3>פניני מרוקו</h3>
         <p class="tagline">הפקת הדגל · המורשת המרוקאית</p>
         <p>פסטיבל תוסס וצבעוני של מורשת מרוקו, עם מיטב האמנים מהארץ ומחו"ל, חפלות לאורך היום וכיבוד עשיר.</p>
+        <span class="follow-gap" aria-hidden="true"></span>
         <a class="follow" href="https://www.facebook.com/barzilaymorocco/" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
           עקבו בפייסבוק<span class="sr-only"> — פסטיבל פניני מרוקו</span>
@@ -354,6 +369,7 @@
         <h3>אירועים והפקות</h3>
         <p class="tagline">כל השאר, כל השנה</p>
         <p>יום האישה, פסטיבל הזמר והצחוק, פסטיבלי סליחות, ימי כיף וטיולים מאורגנים — לאורך כל השנה ובכל רחבי הארץ.</p>
+        <span class="follow-gap" aria-hidden="true"></span>
         <a class="follow" href="https://www.facebook.com/profile.php?id=61591387936775" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
           עקבו בפייסבוק<span class="sr-only"> — ברזילי אירועים ונופש</span>
@@ -378,29 +394,29 @@
       <div class="car-viewport" dir="ltr">
         <div class="car-track" id="track">
 
-          <div class="slide"><button type="button" class="slide-inner" onclick="openLb('morocco-eilat-2026.jpg')">
+          <div class="slide" data-end="2026-12-02"><button type="button" class="slide-inner" onclick="openLb('morocco-eilat-2026.jpg')">
             <span class="sold" aria-hidden="true">SOLD OUT</span>
             <img loading="lazy" src="morocco-eilat-2026.jpg" alt="אזלו המקומות. פלייר פסטיבל פניני מרוקו באילת 2026, 29.11 עד 2.12, ארבעה ימים ושלושה לילות, ימים ראשון עד רביעי. מלון לאונרדו קלאב הכל כלול או מלון ורט חצי פנסיון. מופיעים בין היתר: סימו לוי, בנימין בוזגלו, פטי שרלי, אליאס אספניולי, נביל קארים, אמיר שוהר, אלחי לגריסי, סופיה, ושלישי שמח עם ירון אילן. מחיר מיוחד: 1,990 שקלים לאדם, כולל הסעות וביטוח. לפרטים: 03-559-0765." />
             <span class="cap">פניני מרוקו 2026<small>אילת · 29.11–2.12.26 · אזלו המקומות</small></span></button></div>
 
-          <div class="slide"><button type="button" class="slide-inner" onclick="openLb('teiman-hanukah-2026.jpg')">
+          <div class="slide" data-end="2026-12-06"><button type="button" class="slide-inner" onclick="openLb('teiman-hanukah-2026.jpg')">
             <img loading="lazy" src="teiman-hanukah-2026.jpg" alt="פלייר יום כיף מזמורי תימן, מסיבת חנוכה, ביום ראשון 6.12.26 בגן האירועים קסאנדו בצומת סגולה. המופע המרכזי: ציון גולן, וגם יוני ניסים ואמיר שוהר. טקס זאפה, חפלה תימנית, הדלקת נר, ארוחת צהריים עשירה וסופגנייה. 285 שקלים לאדם כולל הסעה הלוך ושוב. לפרטים: 03-559-0765." />
             <span class="cap">חנוכה תימנית<small>קסאנדו · 6.12.26</small></span></button></div>
 
-          <div class="slide"><button type="button" class="slide-inner" onclick="openLb('hanukah-dayfun-2026.jpg')">
+          <div class="slide" data-end="2026-12-07"><button type="button" class="slide-inner" onclick="openLb('hanukah-dayfun-2026.jpg')">
             <img loading="lazy" src="hanukah-dayfun-2026.jpg" alt="פלייר מסיבת חנוכה, יום כיף בגן האירועים קסאנדו בצומת סגולה, ביום שני 7.12.26. המופע המרכזי: אביבה אבידן, וגם שמוליק ספן ואמיר שוהר. הדלקת נר, ארוחת צהריים מלאה, תצוגת אופנה, קפה וסופגנייה. 250 שקלים לאדם, לא כולל הסעה. לפרטים: 03-559-0765." />
             <span class="cap">מסיבת חנוכה<small>קסאנדו · 7.12.26</small></span></button></div>
 
-          <div class="slide"><button type="button" class="slide-inner" onclick="openLb('nof-hagalil-2026.jpg')">
-            <img loading="lazy" src="nof-hagalil-2026.jpg" alt="פלייר סוף שבוע חגיגי בנוף הגליל, חו״ל בישראל, 24 עד 26.12.26, חמישי עד מוצאי שבת, שני לילות במלון פלאז׳ה נוף הגליל. חצי פנסיון וארוחת צהריים בשבת, אפשרות להסעה, עצירה במרכזה נצרת, ביקור בשוק המזרחי ובשוק הכריסמס של נצרת, קבלת שבת חגיגית והרצאה. אמנים: אליאס אספניולי, חן מרציאנו, אהרון ירימי, אמנון בארי ומשה בן מוש. 1,390 שקלים לאדם בחדר זוגי. לפרטים: 03-559-0765." />
+          <div class="slide" data-end="2026-12-26"><button type="button" class="slide-inner" onclick="openLb('nof-hagalil-2026.jpg')">
+            <img loading="lazy" src="nof-hagalil-2026.jpg" alt="פלייר סוף שבוע חגיגי בנוף הגליל, חו״ל בישראל, 24 עד 26.12.26, חמישי עד מוצאי שבת, שני לילות במלון פלאז׳ה נוף הגליל. חצי פנסיון וארוחת צהריים בשבת, אפשרות להסעה, קבלת שבת חגיגית והרצאה. אמנים: אליאס אספניולי, חן מרציאנו, אהרון ירימי, אמנון בארי ומשה בן מוש. 1,390 שקלים לאדם בחדר זוגי. לפרטים: 03-559-0765." />
             <span class="cap">סוף שבוע חגיגי בנוף הגליל<small>פלאז׳ה · 24–26.12.26</small></span></button></div>
 
-          <div class="slide"><button type="button" class="slide-inner land" onclick="openLb('golden-eilat-vert-2027.jpg')">
+          <div class="slide" data-end="2027-02-11"><button type="button" class="slide-inner land" onclick="openLb('golden-eilat-vert-2027.jpg')">
             <img loading="lazy" src="golden-eilat-vert-2027.jpg" alt="חוברת נופש הזהב באילת, מלון VERT, 7 עד 11.2.27, חמישה ימים וארבעה לילות. הפקה לקבוצה סגורה, לא פתוחה להרשמה לקהל הרחב." />
             <span class="cap">נופש הזהב באילת<small>VERT · 7–11.2.27 · קבוצה סגורה</small></span></button></div>
 
 
-          <div class="slide"><button type="button" class="slide-inner land" onclick="openLb('golden-eilat-leonardo-2027.jpg')">
+          <div class="slide" data-end="2027-03-18"><button type="button" class="slide-inner land" onclick="openLb('golden-eilat-leonardo-2027.jpg')">
             <img loading="lazy" src="golden-eilat-leonardo-2027.jpg" alt="חוברת נופש הזהב באילת, מלון לאונרדו קלאב, 14 עד 18.3.27, חמישה ימים וארבעה לילות. הפקה לקבוצה סגורה, לא פתוחה להרשמה לקהל הרחב." />
             <span class="cap">נופש הזהב באילת<small>לאונרדו קלאב · 14–18.3.27 · קבוצה סגורה</small></span></button></div>
 
@@ -487,7 +503,7 @@
       <a href="privacy.html">מדיניות פרטיות</a>
       <a href="terms.html">תנאי שימוש</a>
     </nav>
-    <p class="foot-note"><b>ברזילי אירועים ונופש</b> — פסטיבלי מורשת ונופש מאורגן לקהל הגמלאים · ללא דמי ביטול עד 3 ימים לפני האירוע<br>טלפון 03-559-0765 · וואטסאפ 054-426-5720 · info@barzilay-e.com · כל הזכויות שמורות</p>
+    <p class="foot-note"><b>ברזילי אירועים ונופש</b> — פסטיבלי מורשת ונופש מאורגן לקהל הגמלאים · ללא דמי ביטול עד 3 ימים לפני האירוע<br>טלפון 03-559-0765 · וואטסאפ 054-426-5720 · <a href="mailto:info@barzilay-e.com">info@barzilay-e.com</a> · כל הזכויות שמורות</p>
   </div>
 </footer>
 
@@ -526,13 +542,35 @@
     if(e.key==='Escape' && lb.classList.contains('open')) closeLb();
   });
 
+  /* ---------- auto-archive: a flyer whose date passed moves to "גאים במה שכבר עשינו" ---------- */
+  (function(){
+    var today=new Date(); today.setHours(0,0,0,0);
+    var grid=document.querySelector('.past-grid');
+    var slides=Array.prototype.slice.call(document.querySelectorAll('#track .slide[data-end]'));
+    slides.sort(function(x,y){ return x.getAttribute('data-end')<y.getAttribute('data-end')?-1:1; });
+    slides.forEach(function(sl){
+      var end=new Date(sl.getAttribute('data-end')+'T23:59:59');
+      if(end>=today) return;
+      var btn=sl.querySelector('.slide-inner'), img=btn.querySelector('img'), cap=btn.querySelector('.cap');
+      if(sl.closest('#track').children.length<=1) return;
+      var t=document.createElement('button'); t.type='button'; t.className='past-tile';
+      t.setAttribute('onclick',btn.getAttribute('onclick'));
+      var im=document.createElement('img'); im.loading='lazy'; im.src=img.getAttribute('src'); im.alt=img.alt;
+      var sp=document.createElement('span'); sp.innerHTML=cap.innerHTML;
+      var sm=sp.querySelector('small'); if(sm) sm.textContent=sm.textContent.replace(/ · אזלו המקומות| · קבוצה סגורה/,'');
+      t.appendChild(im); t.appendChild(sp);
+      grid.insertBefore(t,grid.firstChild); sl.remove();
+    });
+    while(grid.children.length>6) grid.removeChild(grid.lastElementChild);
+  })();
+
   /* ---------- carousel ---------- */
   var carousel=document.getElementById('carousel'), track=document.getElementById('track'),
       dotsWrap=document.getElementById('dots'), pauseBtn=document.getElementById('carPause'),
       pauseIc=document.getElementById('carPauseIc'), pauseTx=document.getElementById('carPauseTx');
   var total=track.children.length, idx=0, vis=3, timer=null, paused=false;
 
-  function calcVis(){ return window.innerWidth<=860 ? 1 : (window.innerWidth<=1200 ? 2 : 3); }
+  function calcVis(){ return Math.min(total, window.innerWidth<=860 ? 1 : (window.innerWidth<=1200 ? 2 : 3)); }
   function maxIdx(){ return Math.max(0, total-vis); }
 
   function buildDots(){
