@@ -157,6 +157,19 @@
   .car-pause{display:inline-flex;align-items:center;gap:7px;background:var(--cream-card);border:1.5px solid var(--teal);
     color:var(--teal);font-family:inherit;font-weight:600;font-size:.9375rem;padding:8px 16px;border-radius:999px;cursor:pointer;min-height:40px;}
   .car-pause:hover,.car-pause:focus-visible{background:var(--teal);color:var(--parchment);}
+  .slide-inner .sold{position:absolute;top:34px;left:-62px;width:240px;text-align:center;transform:rotate(-38deg);background:#B3121F;color:#fff;font-weight:800;letter-spacing:.06em;padding:7px 0;font-size:1rem;z-index:2;box-shadow:0 3px 10px rgba(0,0,0,.35);font-family:Arial,sans-serif;}
+  .slide-inner.land img{object-fit:contain;object-position:center;background:#F6EFDF;}
+  .past{margin-top:56px;text-align:center;}
+  .past-h{font-size:1.75rem;margin-bottom:6px;}
+  .past-p{color:var(--ink-soft);margin-bottom:20px;}
+  .past-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
+  .past-tile{position:relative;border:0;padding:0;border-radius:12px;overflow:hidden;cursor:zoom-in;background:none;}
+  .past-tile img{display:block;width:100%;height:220px;object-fit:cover;object-position:top;}
+  .past-tile span{position:absolute;inset-inline:0;bottom:0;padding:18px 8px 8px;color:#fff;font-weight:700;font-size:.9375rem;background:linear-gradient(transparent,rgba(0,0,0,.78));}
+  .past-tile span small{display:block;font-weight:400;font-size:.75rem;color:var(--gold-bright);}
+  .past-tile:focus-visible{outline:3px solid var(--teal);outline-offset:3px;}
+  @media(max-width:900px){.past-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:520px){.past-grid{grid-template-columns:repeat(2,1fr);}.past-tile img{height:200px;}}
   .car-note{text-align:center;color:#5C513F;font-size:.875rem;margin-top:16px;max-width:640px;margin-inline:auto;}
 
   /* partners */
@@ -355,19 +368,20 @@
   <div class="wrap">
     <div class="sec-head">
       <p class="kicker">ההפקות שלנו</p>
-      <h2>הפקות קרובות, ורגעים מהשטח</h2>
-      <p>ההפקות הקרובות שלנו, ולצידן הפקות שכבר חגגנו יחד. לחצו להגדלה</p>
+      <h2>ההפקות הקרובות</h2>
+      <p>מה מחכה לכם בחודשים הקרובים. לחצו להגדלה</p>
     </div>
 
-    <div class="carousel" id="carousel" style="--vis:3" role="group" aria-roledescription="קרוסלה" aria-label="פליירים של הפקות קרובות ואחרונות">
+    <div class="carousel" id="carousel" style="--vis:3" role="group" aria-roledescription="קרוסלה" aria-label="פליירים של ההפקות הקרובות">
       <button class="car-arrow next" id="carNext" type="button" aria-label="הפלייר הבא">‹</button>
       <button class="car-arrow prev" id="carPrev" type="button" aria-label="הפלייר הקודם">›</button>
       <div class="car-viewport" dir="ltr">
         <div class="car-track" id="track">
 
           <div class="slide"><button type="button" class="slide-inner" onclick="openLb('morocco-eilat-2026.jpg')">
-            <img loading="lazy" src="morocco-eilat-2026.jpg" alt="פלייר פסטיבל פניני מרוקו באילת 2026, 29.11 עד 2.12, ארבעה ימים ושלושה לילות, ימים ראשון עד רביעי. מלון לאונרדו קלאב הכל כלול או מלון ורט חצי פנסיון. מופיעים בין היתר: סימו לוי, בנימין בוזגלו, פטי שרלי, אליאס אספניולי, נביל קארים, אמיר שוהר, אלחי לגריסי, סופיה, ושלישי שמח עם ירון אילן. מחיר מיוחד: 1,990 שקלים לאדם, כולל הסעות וביטוח. לפרטים: 03-559-0765." />
-            <span class="cap">פניני מרוקו 2026<small>אילת · 29.11–2.12.26</small></span></button></div>
+            <span class="sold" aria-hidden="true">SOLD OUT</span>
+            <img loading="lazy" src="morocco-eilat-2026.jpg" alt="אזלו המקומות. פלייר פסטיבל פניני מרוקו באילת 2026, 29.11 עד 2.12, ארבעה ימים ושלושה לילות, ימים ראשון עד רביעי. מלון לאונרדו קלאב הכל כלול או מלון ורט חצי פנסיון. מופיעים בין היתר: סימו לוי, בנימין בוזגלו, פטי שרלי, אליאס אספניולי, נביל קארים, אמיר שוהר, אלחי לגריסי, סופיה, ושלישי שמח עם ירון אילן. מחיר מיוחד: 1,990 שקלים לאדם, כולל הסעות וביטוח. לפרטים: 03-559-0765." />
+            <span class="cap">פניני מרוקו 2026<small>אילת · 29.11–2.12.26 · אזלו המקומות</small></span></button></div>
 
           <div class="slide"><button type="button" class="slide-inner" onclick="openLb('teiman-hanukah-2026.jpg')">
             <img loading="lazy" src="teiman-hanukah-2026.jpg" alt="פלייר יום כיף מזמורי תימן, מסיבת חנוכה, ביום ראשון 6.12.26 בגן האירועים קסאנדו בצומת סגולה. המופע המרכזי: ציון גולן, וגם יוני ניסים ואמיר שוהר. טקס זאפה, חפלה תימנית, הדלקת נר, ארוחת צהריים עשירה וסופגנייה. 285 שקלים לאדם כולל הסעה הלוך ושוב. לפרטים: 03-559-0765." />
@@ -377,21 +391,14 @@
             <img loading="lazy" src="hanukah-dayfun-2026.jpg" alt="פלייר מסיבת חנוכה, יום כיף בגן האירועים קסאנדו בצומת סגולה, ביום שני 7.12.26. המופע המרכזי: אביבה אבידן, וגם שמוליק ספן ואמיר שוהר. הדלקת נר, ארוחת צהריים מלאה, תצוגת אופנה, קפה וסופגנייה. 250 שקלים לאדם, לא כולל הסעה. לפרטים: 03-559-0765." />
             <span class="cap">מסיבת חנוכה<small>קסאנדו · 7.12.26</small></span></button></div>
 
-          <div class="slide"><button type="button" class="slide-inner" onclick="openLb('teiman-tiberias.jpg')">
-            <img loading="lazy" src="teiman-tiberias.jpg" alt="פלייר פסטיבל מזמורי תימן בטבריה, מלון לאונרדו קלאב, בתאריכים 28.6 עד 1.7, נופש בן 4 ימים ו-3 לילות על בסיס הכל כלול דלוקס. הופיעו: אבי סינואני, ציון גולן, נעמי מליחי, אביחי מליחי, אמיר שוהר, יששי מעודה ואליאס אספניולי. המחיר במבצע: 1,990 שקלים לאדם בחדר זוגי, כולל אוטובוס." />
-            <span class="cap">מזמורי תימן<small>טבריה · לאונרדו קלאב</small></span></button></div>
+          <div class="slide"><button type="button" class="slide-inner land" onclick="openLb('golden-eilat-vert-2027.jpg')">
+            <img loading="lazy" src="golden-eilat-vert-2027.jpg" alt="חוברת נופש הזהב באילת, מלון VERT, 7 עד 11.2.27, חמישה ימים וארבעה לילות. הפקה לקבוצה סגורה, לא פתוחה להרשמה לקהל הרחב." />
+            <span class="cap">נופש הזהב באילת<small>VERT · 7–11.2.27 · קבוצה סגורה</small></span></button></div>
 
-          <div class="slide"><button type="button" class="slide-inner" onclick="openLb('teiman-deadsea.jpg')">
-            <img loading="lazy" src="teiman-deadsea.jpg" alt="פלייר פסטיבל מזמורי תימן בים המלח, מלון בראון, בתאריכים 30.8 עד 2.9.26, באופי הסליחות. מופיעים: ציון גולן, מרים צפרי, גיא יהוד, ראם כהן, אמיר שוהר, יוני ניסים ולהקת סעי יונה. חצי פנסיון דלוקס, טקס זאפה, סליחות ופיוטים כל יום. מחיר מבצע: 1,890 שקלים לאדם בחדר זוגי." />
-            <span class="cap">מזמורי תימן<small>ים המלח · באופי הסליחות</small></span></button></div>
 
-          <div class="slide"><button type="button" class="slide-inner" onclick="openLb('womensday-eilat.jpg')">
-            <img loading="lazy" src="womensday-eilat.jpg" alt="פלייר חגיגות יום האישה הבינלאומי באילת, מלון לאונרדו קלאב, בתאריכים 14 עד 16 באפריל 2026, שלושה ימים על בסיס הכל כלול. הופיעו: יונאב יצחק, חן גואטה, הזמרת היוונייה סופיה ורועי ברקן. מחיר מבצע: 1,190 שקלים לאדם בחדר זוגי, כולל הסעות וביטוח." />
-            <span class="cap">חגיגות יום האישה<small>אילת · לאונרדו קלאב</small></span></button></div>
-
-          <div class="slide"><button type="button" class="slide-inner" onclick="openLb('zemer-vetzhok.jpg')">
-            <img loading="lazy" src="zemer-vetzhok.jpg" alt="פלייר פסטיבל הזמר והצחוק בנתניה, מלון הסוויטות רמדה על חוף הים, בתאריכים 23 עד 25.6.26, שלושה ימים הכוללים טיולים והופעות. הופיעו: אליאס אספניולי, אבי סינואני, אסף אשתר ואלביס פרסלי הישראלי. מחיר מבצע: 1,420 שקלים לאדם בחדר זוגי, כולל אוטובוס תיירים וביטוח." />
-            <span class="cap">פסטיבל הזמר והצחוק<small>נתניה · רמדה</small></span></button></div>
+          <div class="slide"><button type="button" class="slide-inner land" onclick="openLb('golden-eilat-leonardo-2027.jpg')">
+            <img loading="lazy" src="golden-eilat-leonardo-2027.jpg" alt="חוברת נופש הזהב באילת, מלון לאונרדו קלאב, 14 עד 18.3.27, חמישה ימים וארבעה לילות. הפקה לקבוצה סגורה, לא פתוחה להרשמה לקהל הרחב." />
+            <span class="cap">נופש הזהב באילת<small>לאונרדו קלאב · 14–18.3.27 · קבוצה סגורה</small></span></button></div>
 
         </div>
       </div>
@@ -401,7 +408,20 @@
         </button>
         <div class="car-dots" id="dots" role="group" aria-label="בחירת פלייר"></div>
       </div>
-      <p class="car-note">הפליירים מציגים הפקות קרובות לצד הפקות שכבר התקיימו. התוכנית, האמנים והמחירים עשויים להשתנות ואינם מהווים התחייבות. לפרטים ולמחירים מעודכנים: 03-559-0765.</p>
+      <p class="car-note">התוכנית, האמנים והמחירים עשויים להשתנות ואינם מהווים התחייבות. לפרטים ולמחירים מעודכנים: <span dir="ltr" style="white-space:nowrap">03-559-0765</span>.</p>
+    <div class="past reveal">
+    <h3 class="past-h">גאים במה שכבר עשינו</h3>
+    <p class="past-p">מבחר מההפקות שחגגנו יחד בשנה האחרונה. לחצו להגדלה</p>
+    <div class="past-grid">
+      <button type="button" class="past-tile" onclick="openLb('teiman-deadsea.jpg')"><img loading="lazy" src="teiman-deadsea.jpg" alt="פלייר פסטיבל מזמורי תימן בים המלח, מלון בראון, בתאריכים 30.8 עד 2.9.26, באופי הסליחות. מופיעים: ציון גולן, מרים צפרי, גיא יהוד, ראם כהן, אמיר שוהר, יוני ניסים ולהקת סעי יונה. חצי פנסיון דלוקס, טקס זאפה, סליחות ופיוטים כל יום. מחיר מבצע: 1,890 שקלים לאדם בחדר זוגי." /><span>מזמורי תימן<small>ים המלח · סליחות 2026</small></span></button>
+      <button type="button" class="past-tile" onclick="openLb('teiman-tiberias.jpg')"><img loading="lazy" src="teiman-tiberias.jpg" alt="פלייר פסטיבל מזמורי תימן בטבריה, מלון לאונרדו קלאב, בתאריכים 28.6 עד 1.7, נופש בן 4 ימים ו-3 לילות על בסיס הכל כלול דלוקס. הופיעו: אבי סינואני, ציון גולן, נעמי מליחי, אביחי מליחי, אמיר שוהר, יששי מעודה ואליאס אספניולי. המחיר במבצע: 1,990 שקלים לאדם בחדר זוגי, כולל אוטובוס." /><span>מזמורי תימן<small>טבריה · 2026</small></span></button>
+      <button type="button" class="past-tile" onclick="openLb('zemer-vetzhok.jpg')"><img loading="lazy" src="zemer-vetzhok.jpg" alt="פלייר פסטיבל הזמר והצחוק בנתניה, מלון הסוויטות רמדה על חוף הים, בתאריכים 23 עד 25.6.26, שלושה ימים הכוללים טיולים והופעות. הופיעו: אליאס אספניולי, אבי סינואני, אסף אשתר ואלביס פרסלי הישראלי. מחיר מבצע: 1,420 שקלים לאדם בחדר זוגי, כולל אוטובוס תיירים וביטוח." /><span>פסטיבל הזמר והצחוק<small>נתניה · 2026</small></span></button>
+      <button type="button" class="past-tile" onclick="openLb('womensday-eilat.jpg')"><img loading="lazy" src="womensday-eilat.jpg" alt="פלייר חגיגות יום האישה הבינלאומי באילת, מלון לאונרדו קלאב, בתאריכים 14 עד 16 באפריל 2026, שלושה ימים על בסיס הכל כלול. הופיעו: יונאב יצחק, חן גואטה, הזמרת היוונייה סופיה ורועי ברקן. מחיר מבצע: 1,190 שקלים לאדם בחדר זוגי, כולל הסעות וביטוח." /><span>חגיגות יום האישה<small>אילת · 2026</small></span></button>
+      <button type="button" class="past-tile" onclick="openLb('hanukah-dayfun-2025.jpg')"><img loading="lazy" src="hanukah-dayfun-2025.jpg" alt="פלייר מסיבת חנוכה, יום כיף בגן האירועים קסאנדו בצומת סגולה, 16.12.25. הופיעו: נחום חבר, שלומי סרנגה והלהקה, וגיא יהוד." /><span>מסיבת חנוכה<small>קסאנדו · 2025</small></span></button>
+      <button type="button" class="past-tile" onclick="openLb('morocco-eilat-2025.jpg')"><img loading="lazy" src="morocco-eilat-2025.jpg" alt="פלייר פסטיבל פניני מרוקו באילת 2025, מלון לאונרדו קלאב, 30.11 עד 3.12. הופיעו: חיים זריהן, סימו לוי, חלומה, נדיה אל גרגאבי, עמי אבו, יולנדה, נביל קארים, פטי שרלי, חן גואטה ובהנחיית ירון אילן." /><span>פניני מרוקו<small>אילת · 2025</small></span></button>
+    </div>
+  </div>
+
     </div>
   </div>
 </section>
