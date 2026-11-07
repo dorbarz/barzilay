@@ -1,0 +1,15 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>bridge</title></head>
+<body style="font:16px Arial;padding:20px">מעביר קובץ…
+<script>
+(async()=>{
+  const p=new URLSearchParams(location.search), f=p.get('f');
+  if(!f||!/^[\w\-.]+$/.test(f)){document.body.textContent='שם קובץ לא תקין';return;}
+  try{
+    const r=await fetch('../media/'+f,{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
+    const buf=await r.arrayBuffer(), mime=r.headers.get('content-type')||'application/octet-stream';
+    if(!window.opener){document.body.textContent='אין חלון פותח';return;}
+    window.opener.postMessage({type:'brz-file',name:f,mime,buf},'https://business.facebook.com',[buf]);
+    document.body.textContent='נשלח ✓ ('+Math.round(buf.byteLength/1024)+'KB)'; setTimeout(()=>window.close(),1500);
+  }catch(e){document.body.textContent='שגיאה: '+e.message;}
+})();
+</script></body></html>
