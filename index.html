@@ -88,8 +88,8 @@
   .trust{background:var(--teal-soft);color:#EDE3CA;border-top:1px solid var(--teal-line);}
   .trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 40px;padding:18px 0;text-align:center;}
   .trust b{color:var(--gold-bright);font-weight:700;}
-  .trust span{font-size:1rem;display:inline-flex;align-items:center;gap:9px;}
-  .trust .khatam{color:var(--gold);width:13px;height:13px;}
+  .trust span{font-size:1rem;display:inline-block;}
+  .trust .khatam{color:var(--gold);width:13px;height:13px;margin-inline-end:9px;vertical-align:-1px;}
 
   /* section shell */
   .sec{padding:76px 0;}
@@ -169,7 +169,7 @@
   .car-pause{display:inline-flex;align-items:center;gap:7px;background:var(--cream-card);border:1.5px solid var(--teal);
     color:var(--teal);font-family:inherit;font-weight:600;font-size:.9375rem;padding:8px 16px;border-radius:999px;cursor:pointer;min-height:40px;}
   .car-pause:hover,.car-pause:focus-visible{background:var(--teal);color:var(--parchment);}
-  .slide-inner .sold{position:absolute;top:34px;left:-62px;width:240px;text-align:center;transform:rotate(-38deg);background:#B3121F;color:#fff;font-weight:800;letter-spacing:.06em;padding:7px 0;font-size:1rem;z-index:2;box-shadow:0 3px 10px rgba(0,0,0,.35);font-family:Arial,sans-serif;}
+  .slide-inner .sold{position:absolute;top:34px;left:-62px;width:240px;text-align:center;transform:rotate(-38deg);background:#B3121F;color:#fff;font-weight:800;padding:7px 0;font-size:1rem;z-index:2;box-shadow:0 3px 10px rgba(0,0,0,.35);}
   .slide-inner.land img{object-fit:contain;object-position:center;background:#F6EFDF;}
   .past{margin-top:56px;text-align:center;}
   .past-h{font-size:1.75rem;margin-bottom:6px;}
@@ -234,6 +234,19 @@
     .reveal{opacity:1;transform:none;transition:none;}
     html{scroll-behavior:auto;}
   }
+  /* sticky mobile contact bar */
+  .mbar{display:none;}
+  @media(max-width:820px){
+    .mbar{display:flex;position:fixed;inset-inline:0;bottom:0;z-index:60;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+      background:rgba(14,59,55,.97);border-top:1px solid var(--teal-line);box-shadow:0 -6px 20px rgba(0,0,0,.18);}
+    .mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:1.0625rem;min-height:50px;border-radius:999px;}
+    .mbar svg{width:20px;height:20px;}
+    .mbar .m-wa{background:var(--gold);color:var(--teal);}
+    .mbar .m-call{border:2px solid rgba(245,236,216,.6);color:#fff;}
+    body{padding-bottom:76px;}
+    html #a11yBtn{bottom:88px;}
+    html #a11yPanel{bottom:156px;}
+  }
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
   :focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px;border-radius:6px;}
   html.a11y-light :focus-visible,html.a11y-hc :focus-visible{outline-color:#ffdd00;}
@@ -245,10 +258,10 @@
   <div class="wrap">
     <a class="brand-mini" href="#top"><span class="khatam" aria-hidden="true"></span>ברזילי אירועים ונופש</a>
     <nav aria-label="ניווט ראשי">
+      <a href="#gallery">ההפקות הקרובות</a>
       <a href="#about">אודות</a>
       <a href="#care">המעטפת שלנו</a>
-      <a href="#prod">ההפקות</a>
-      <a href="#gallery">גלריה</a>
+      <a href="#prod">עמודי הפייסבוק</a>
       <a href="#contact">צרו קשר</a>
     </nav>
   </div>
@@ -284,6 +297,73 @@
     <span><span class="khatam" aria-hidden="true"></span><b>ללא דמי ביטול</b> עד 3 ימים לפני</span>
   </div>
 </div>
+
+<!-- gallery -->
+<section class="sec gallery reveal" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">ההפקות שלנו</p>
+      <h2>ההפקות הקרובות</h2>
+      <p>מה מחכה לכם בחודשים הקרובים. לחצו להגדלה</p>
+    </div>
+
+    <div class="carousel" id="carousel" style="--vis:3" role="group" aria-roledescription="קרוסלה" aria-label="פליירים של ההפקות הקרובות">
+      <button class="car-arrow next" id="carNext" type="button" aria-label="הפלייר הבא">‹</button>
+      <button class="car-arrow prev" id="carPrev" type="button" aria-label="הפלייר הקודם">›</button>
+      <div class="car-viewport" dir="ltr">
+        <div class="car-track" id="track">
+
+          <div class="slide" data-end="2026-12-02"><button type="button" class="slide-inner" onclick="openLb('morocco-eilat-2026.jpg')">
+            <span class="sold" aria-hidden="true">אזלו המקומות</span>
+            <img loading="lazy" src="morocco-eilat-2026.jpg" alt="אזלו המקומות. פלייר פסטיבל פניני מרוקו באילת 2026, 29.11 עד 2.12, ארבעה ימים ושלושה לילות, ימים ראשון עד רביעי. מלון לאונרדו קלאב הכל כלול או מלון ורט חצי פנסיון. מופיעים בין היתר: סימו לוי, בנימין בוזגלו, פטי שרלי, אליאס אספניולי, נביל קארים, אמיר שוהר, אלחי לגריסי, סופיה, ושלישי שמח עם ירון אילן. מחיר מיוחד: 1,990 שקלים לאדם, כולל הסעות וביטוח. לפרטים: 03-559-0765." />
+            <span class="cap">פניני מרוקו 2026<small>אילת · 29.11–2.12.26 · אזלו המקומות</small></span></button></div>
+
+          <div class="slide" data-end="2026-12-06"><button type="button" class="slide-inner" onclick="openLb('teiman-hanukah-2026.jpg')">
+            <img loading="lazy" src="teiman-hanukah-2026.jpg" alt="פלייר יום כיף מזמורי תימן, מסיבת חנוכה, ביום ראשון 6.12.26 בגן האירועים קסאנדו בצומת סגולה. המופע המרכזי: ציון גולן, וגם יוני ניסים ואמיר שוהר. טקס זאפה, חפלה תימנית, הדלקת נר, ארוחת צהריים עשירה וסופגנייה. 285 שקלים לאדם כולל הסעה הלוך ושוב. לפרטים: 03-559-0765." />
+            <span class="cap">חנוכה תימנית<small>קסאנדו · 6.12.26</small></span></button></div>
+
+          <div class="slide" data-end="2026-12-07"><button type="button" class="slide-inner" onclick="openLb('hanukah-dayfun-2026.jpg')">
+            <img loading="lazy" src="hanukah-dayfun-2026.jpg" alt="פלייר מסיבת חנוכה, יום כיף בגן האירועים קסאנדו בצומת סגולה, ביום שני 7.12.26. המופע המרכזי: אביבה אבידן, וגם שמוליק ספן ואמיר שוהר. הדלקת נר, ארוחת צהריים מלאה, תצוגת אופנה, קפה וסופגנייה. 250 שקלים לאדם, לא כולל הסעה. לפרטים: 03-559-0765." />
+            <span class="cap">מסיבת חנוכה<small>קסאנדו · 7.12.26</small></span></button></div>
+
+          <div class="slide" data-end="2026-12-26"><button type="button" class="slide-inner" onclick="openLb('nof-hagalil-2026.jpg')">
+            <img loading="lazy" src="nof-hagalil-2026.jpg" alt="פלייר סוף שבוע חגיגי בנוף הגליל, חו״ל בישראל, 24 עד 26.12.26, חמישי עד מוצאי שבת, שני לילות במלון פלאז׳ה נוף הגליל. חצי פנסיון וארוחת צהריים בשבת, אפשרות להסעה, קבלת שבת חגיגית והרצאה. אמנים: אליאס אספניולי, חן מרציאנו, אהרון ירימי, אמנון בארי ומשה בן מוש. 1,390 שקלים לאדם בחדר זוגי. לפרטים: 03-559-0765." />
+            <span class="cap">סוף שבוע חגיגי בנוף הגליל<small>פלאז׳ה · 24–26.12.26</small></span></button></div>
+
+          <div class="slide" data-end="2027-02-11"><button type="button" class="slide-inner land" onclick="openLb('golden-eilat-vert-2027.jpg')">
+            <img loading="lazy" src="golden-eilat-vert-2027.jpg" alt="חוברת נופש הזהב באילת, מלון VERT, 7 עד 11.2.27, חמישה ימים וארבעה לילות. הפקה לקבוצה סגורה, לא פתוחה להרשמה לקהל הרחב." />
+            <span class="cap">נופש הזהב באילת<small>VERT · 7–11.2.27 · קבוצה סגורה</small></span></button></div>
+
+
+          <div class="slide" data-end="2027-03-18"><button type="button" class="slide-inner land" onclick="openLb('golden-eilat-leonardo-2027.jpg')">
+            <img loading="lazy" src="golden-eilat-leonardo-2027.jpg" alt="חוברת נופש הזהב באילת, מלון לאונרדו קלאב, 14 עד 18.3.27, חמישה ימים וארבעה לילות. הפקה לקבוצה סגורה, לא פתוחה להרשמה לקהל הרחב." />
+            <span class="cap">נופש הזהב באילת<small>לאונרדו קלאב · 14–18.3.27 · קבוצה סגורה</small></span></button></div>
+
+        </div>
+      </div>
+      <div class="car-bar">
+        <button class="car-pause" id="carPause" type="button" aria-label="עצירת ההחלפה האוטומטית של הפליירים">
+          <span id="carPauseIc" aria-hidden="true">⏸</span><span id="carPauseTx">עצירה</span>
+        </button>
+        <div class="car-dots" id="dots" role="group" aria-label="בחירת פלייר"></div>
+      </div>
+      <p class="car-note">התוכנית, האמנים והמחירים עשויים להשתנות ואינם מהווים התחייבות. לפרטים ולמחירים מעודכנים: <span dir="ltr" style="white-space:nowrap">03-559-0765</span>.</p>
+    <div class="past reveal">
+    <h3 class="past-h">גאים במה שכבר עשינו</h3>
+    <p class="past-p">מבחר מההפקות שחגגנו יחד בשנה האחרונה. לחצו להגדלה</p>
+    <div class="past-grid">
+      <button type="button" class="past-tile" onclick="openLb('teiman-deadsea.jpg')"><img loading="lazy" src="teiman-deadsea.jpg" alt="פלייר פסטיבל מזמורי תימן בים המלח, מלון בראון, בתאריכים 30.8 עד 2.9.26, באופי הסליחות. מופיעים: ציון גולן, מרים צפרי, גיא יהוד, ראם כהן, אמיר שוהר, יוני ניסים ולהקת סעי יונה. חצי פנסיון דלוקס, טקס זאפה, סליחות ופיוטים כל יום. מחיר מבצע: 1,890 שקלים לאדם בחדר זוגי." /><span>מזמורי תימן<small>ים המלח · סליחות 2026</small></span></button>
+      <button type="button" class="past-tile" onclick="openLb('teiman-tiberias.jpg')"><img loading="lazy" src="teiman-tiberias.jpg" alt="פלייר פסטיבל מזמורי תימן בטבריה, מלון לאונרדו קלאב, בתאריכים 28.6 עד 1.7, נופש בן 4 ימים ו-3 לילות על בסיס הכל כלול דלוקס. הופיעו: אבי סינואני, ציון גולן, נעמי מליחי, אביחי מליחי, אמיר שוהר, יששי מעודה ואליאס אספניולי. המחיר במבצע: 1,990 שקלים לאדם בחדר זוגי, כולל אוטובוס." /><span>מזמורי תימן<small>טבריה · 2026</small></span></button>
+      <button type="button" class="past-tile" onclick="openLb('zemer-vetzhok.jpg')"><img loading="lazy" src="zemer-vetzhok.jpg" alt="פלייר פסטיבל הזמר והצחוק בנתניה, מלון הסוויטות רמדה על חוף הים, בתאריכים 23 עד 25.6.26, שלושה ימים הכוללים טיולים והופעות. הופיעו: אליאס אספניולי, אבי סינואני, אסף אשתר ואלביס פרסלי הישראלי. מחיר מבצע: 1,420 שקלים לאדם בחדר זוגי, כולל אוטובוס תיירים וביטוח." /><span>פסטיבל הזמר והצחוק<small>נתניה · 2026</small></span></button>
+      <button type="button" class="past-tile" onclick="openLb('womensday-eilat.jpg')"><img loading="lazy" src="womensday-eilat.jpg" alt="פלייר חגיגות יום האישה הבינלאומי באילת, מלון לאונרדו קלאב, בתאריכים 14 עד 16 באפריל 2026, שלושה ימים על בסיס הכל כלול. הופיעו: יונאב יצחק, חן גואטה, הזמרת היוונייה סופיה ורועי ברקן. מחיר מבצע: 1,190 שקלים לאדם בחדר זוגי, כולל הסעות וביטוח." /><span>חגיגות יום האישה<small>אילת · 2026</small></span></button>
+      <button type="button" class="past-tile" onclick="openLb('hanukah-dayfun-2025.jpg')"><img loading="lazy" src="hanukah-dayfun-2025.jpg" alt="פלייר מסיבת חנוכה, יום כיף בגן האירועים קסאנדו בצומת סגולה, 16.12.25. הופיעו: נחום חבר, שלומי סרנגה והלהקה, וגיא יהוד." /><span>מסיבת חנוכה<small>קסאנדו · 2025</small></span></button>
+      <button type="button" class="past-tile" onclick="openLb('morocco-eilat-2025.jpg')"><img loading="lazy" src="morocco-eilat-2025.jpg" alt="פלייר פסטיבל פניני מרוקו באילת 2025, מלון לאונרדו קלאב, 30.11 עד 3.12. הופיעו: חיים זריהן, סימו לוי, חלומה, נדיה אל גרגאבי, עמי אבו, יולנדה, נביל קארים, פטי שרלי, חן גואטה ובהנחיית ירון אילן." /><span>פניני מרוקו<small>אילת · 2025</small></span></button>
+    </div>
+  </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- about -->
 <section class="sec about reveal" id="about">
@@ -379,73 +459,6 @@
   </div>
 </section>
 
-<!-- gallery -->
-<section class="sec gallery reveal" id="gallery">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="kicker">ההפקות שלנו</p>
-      <h2>ההפקות הקרובות</h2>
-      <p>מה מחכה לכם בחודשים הקרובים. לחצו להגדלה</p>
-    </div>
-
-    <div class="carousel" id="carousel" style="--vis:3" role="group" aria-roledescription="קרוסלה" aria-label="פליירים של ההפקות הקרובות">
-      <button class="car-arrow next" id="carNext" type="button" aria-label="הפלייר הבא">‹</button>
-      <button class="car-arrow prev" id="carPrev" type="button" aria-label="הפלייר הקודם">›</button>
-      <div class="car-viewport" dir="ltr">
-        <div class="car-track" id="track">
-
-          <div class="slide" data-end="2026-12-02"><button type="button" class="slide-inner" onclick="openLb('morocco-eilat-2026.jpg')">
-            <span class="sold" aria-hidden="true">SOLD OUT</span>
-            <img loading="lazy" src="morocco-eilat-2026.jpg" alt="אזלו המקומות. פלייר פסטיבל פניני מרוקו באילת 2026, 29.11 עד 2.12, ארבעה ימים ושלושה לילות, ימים ראשון עד רביעי. מלון לאונרדו קלאב הכל כלול או מלון ורט חצי פנסיון. מופיעים בין היתר: סימו לוי, בנימין בוזגלו, פטי שרלי, אליאס אספניולי, נביל קארים, אמיר שוהר, אלחי לגריסי, סופיה, ושלישי שמח עם ירון אילן. מחיר מיוחד: 1,990 שקלים לאדם, כולל הסעות וביטוח. לפרטים: 03-559-0765." />
-            <span class="cap">פניני מרוקו 2026<small>אילת · 29.11–2.12.26 · אזלו המקומות</small></span></button></div>
-
-          <div class="slide" data-end="2026-12-06"><button type="button" class="slide-inner" onclick="openLb('teiman-hanukah-2026.jpg')">
-            <img loading="lazy" src="teiman-hanukah-2026.jpg" alt="פלייר יום כיף מזמורי תימן, מסיבת חנוכה, ביום ראשון 6.12.26 בגן האירועים קסאנדו בצומת סגולה. המופע המרכזי: ציון גולן, וגם יוני ניסים ואמיר שוהר. טקס זאפה, חפלה תימנית, הדלקת נר, ארוחת צהריים עשירה וסופגנייה. 285 שקלים לאדם כולל הסעה הלוך ושוב. לפרטים: 03-559-0765." />
-            <span class="cap">חנוכה תימנית<small>קסאנדו · 6.12.26</small></span></button></div>
-
-          <div class="slide" data-end="2026-12-07"><button type="button" class="slide-inner" onclick="openLb('hanukah-dayfun-2026.jpg')">
-            <img loading="lazy" src="hanukah-dayfun-2026.jpg" alt="פלייר מסיבת חנוכה, יום כיף בגן האירועים קסאנדו בצומת סגולה, ביום שני 7.12.26. המופע המרכזי: אביבה אבידן, וגם שמוליק ספן ואמיר שוהר. הדלקת נר, ארוחת צהריים מלאה, תצוגת אופנה, קפה וסופגנייה. 250 שקלים לאדם, לא כולל הסעה. לפרטים: 03-559-0765." />
-            <span class="cap">מסיבת חנוכה<small>קסאנדו · 7.12.26</small></span></button></div>
-
-          <div class="slide" data-end="2026-12-26"><button type="button" class="slide-inner" onclick="openLb('nof-hagalil-2026.jpg')">
-            <img loading="lazy" src="nof-hagalil-2026.jpg" alt="פלייר סוף שבוע חגיגי בנוף הגליל, חו״ל בישראל, 24 עד 26.12.26, חמישי עד מוצאי שבת, שני לילות במלון פלאז׳ה נוף הגליל. חצי פנסיון וארוחת צהריים בשבת, אפשרות להסעה, קבלת שבת חגיגית והרצאה. אמנים: אליאס אספניולי, חן מרציאנו, אהרון ירימי, אמנון בארי ומשה בן מוש. 1,390 שקלים לאדם בחדר זוגי. לפרטים: 03-559-0765." />
-            <span class="cap">סוף שבוע חגיגי בנוף הגליל<small>פלאז׳ה · 24–26.12.26</small></span></button></div>
-
-          <div class="slide" data-end="2027-02-11"><button type="button" class="slide-inner land" onclick="openLb('golden-eilat-vert-2027.jpg')">
-            <img loading="lazy" src="golden-eilat-vert-2027.jpg" alt="חוברת נופש הזהב באילת, מלון VERT, 7 עד 11.2.27, חמישה ימים וארבעה לילות. הפקה לקבוצה סגורה, לא פתוחה להרשמה לקהל הרחב." />
-            <span class="cap">נופש הזהב באילת<small>VERT · 7–11.2.27 · קבוצה סגורה</small></span></button></div>
-
-
-          <div class="slide" data-end="2027-03-18"><button type="button" class="slide-inner land" onclick="openLb('golden-eilat-leonardo-2027.jpg')">
-            <img loading="lazy" src="golden-eilat-leonardo-2027.jpg" alt="חוברת נופש הזהב באילת, מלון לאונרדו קלאב, 14 עד 18.3.27, חמישה ימים וארבעה לילות. הפקה לקבוצה סגורה, לא פתוחה להרשמה לקהל הרחב." />
-            <span class="cap">נופש הזהב באילת<small>לאונרדו קלאב · 14–18.3.27 · קבוצה סגורה</small></span></button></div>
-
-        </div>
-      </div>
-      <div class="car-bar">
-        <button class="car-pause" id="carPause" type="button" aria-label="עצירת ההחלפה האוטומטית של הפליירים">
-          <span id="carPauseIc" aria-hidden="true">⏸</span><span id="carPauseTx">עצירה</span>
-        </button>
-        <div class="car-dots" id="dots" role="group" aria-label="בחירת פלייר"></div>
-      </div>
-      <p class="car-note">התוכנית, האמנים והמחירים עשויים להשתנות ואינם מהווים התחייבות. לפרטים ולמחירים מעודכנים: <span dir="ltr" style="white-space:nowrap">03-559-0765</span>.</p>
-    <div class="past reveal">
-    <h3 class="past-h">גאים במה שכבר עשינו</h3>
-    <p class="past-p">מבחר מההפקות שחגגנו יחד בשנה האחרונה. לחצו להגדלה</p>
-    <div class="past-grid">
-      <button type="button" class="past-tile" onclick="openLb('teiman-deadsea.jpg')"><img loading="lazy" src="teiman-deadsea.jpg" alt="פלייר פסטיבל מזמורי תימן בים המלח, מלון בראון, בתאריכים 30.8 עד 2.9.26, באופי הסליחות. מופיעים: ציון גולן, מרים צפרי, גיא יהוד, ראם כהן, אמיר שוהר, יוני ניסים ולהקת סעי יונה. חצי פנסיון דלוקס, טקס זאפה, סליחות ופיוטים כל יום. מחיר מבצע: 1,890 שקלים לאדם בחדר זוגי." /><span>מזמורי תימן<small>ים המלח · סליחות 2026</small></span></button>
-      <button type="button" class="past-tile" onclick="openLb('teiman-tiberias.jpg')"><img loading="lazy" src="teiman-tiberias.jpg" alt="פלייר פסטיבל מזמורי תימן בטבריה, מלון לאונרדו קלאב, בתאריכים 28.6 עד 1.7, נופש בן 4 ימים ו-3 לילות על בסיס הכל כלול דלוקס. הופיעו: אבי סינואני, ציון גולן, נעמי מליחי, אביחי מליחי, אמיר שוהר, יששי מעודה ואליאס אספניולי. המחיר במבצע: 1,990 שקלים לאדם בחדר זוגי, כולל אוטובוס." /><span>מזמורי תימן<small>טבריה · 2026</small></span></button>
-      <button type="button" class="past-tile" onclick="openLb('zemer-vetzhok.jpg')"><img loading="lazy" src="zemer-vetzhok.jpg" alt="פלייר פסטיבל הזמר והצחוק בנתניה, מלון הסוויטות רמדה על חוף הים, בתאריכים 23 עד 25.6.26, שלושה ימים הכוללים טיולים והופעות. הופיעו: אליאס אספניולי, אבי סינואני, אסף אשתר ואלביס פרסלי הישראלי. מחיר מבצע: 1,420 שקלים לאדם בחדר זוגי, כולל אוטובוס תיירים וביטוח." /><span>פסטיבל הזמר והצחוק<small>נתניה · 2026</small></span></button>
-      <button type="button" class="past-tile" onclick="openLb('womensday-eilat.jpg')"><img loading="lazy" src="womensday-eilat.jpg" alt="פלייר חגיגות יום האישה הבינלאומי באילת, מלון לאונרדו קלאב, בתאריכים 14 עד 16 באפריל 2026, שלושה ימים על בסיס הכל כלול. הופיעו: יונאב יצחק, חן גואטה, הזמרת היוונייה סופיה ורועי ברקן. מחיר מבצע: 1,190 שקלים לאדם בחדר זוגי, כולל הסעות וביטוח." /><span>חגיגות יום האישה<small>אילת · 2026</small></span></button>
-      <button type="button" class="past-tile" onclick="openLb('hanukah-dayfun-2025.jpg')"><img loading="lazy" src="hanukah-dayfun-2025.jpg" alt="פלייר מסיבת חנוכה, יום כיף בגן האירועים קסאנדו בצומת סגולה, 16.12.25. הופיעו: נחום חבר, שלומי סרנגה והלהקה, וגיא יהוד." /><span>מסיבת חנוכה<small>קסאנדו · 2025</small></span></button>
-      <button type="button" class="past-tile" onclick="openLb('morocco-eilat-2025.jpg')"><img loading="lazy" src="morocco-eilat-2025.jpg" alt="פלייר פסטיבל פניני מרוקו באילת 2025, מלון לאונרדו קלאב, 30.11 עד 3.12. הופיעו: חיים זריהן, סימו לוי, חלומה, נדיה אל גרגאבי, עמי אבו, יולנדה, נביל קארים, פטי שרלי, חן גואטה ובהנחיית ירון אילן." /><span>פניני מרוקו<small>אילת · 2025</small></span></button>
-    </div>
-  </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- partners -->
 <section class="partners reveal">
   <div class="wrap">
@@ -454,28 +467,6 @@
     <div class="plist">
       <span>פתאל</span><span>ישרוטל</span><span>אסטרל</span><span>קנדה ישראל</span>
       <span>בראון</span><span>דוד ים המלח</span><span>הרברט סמואל</span>
-    </div>
-  </div>
-</section>
-
-<!-- updates -->
-<section class="updates reveal" id="updates">
-  <div class="wrap">
-    <h2>רוצים לדעת מה ההפקה הבאה?</h2>
-    <p>אנחנו מעלים כל פלייר חדש לעמודי הפייסבוק שלנו. עקבו אחרי העמוד שמעניין אתכם — ותהיו הראשונים לדעת.</p>
-    <div class="row-chip">
-      <a class="chip" href="https://www.facebook.com/barzilaytiamnim/?locale=he_IL" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
-        מזמורי תימן בפייסבוק
-      </a>
-      <a class="chip" href="https://www.facebook.com/barzilaymorocco/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
-        פניני מרוקו בפייסבוק
-      </a>
-      <a class="chip" href="https://www.facebook.com/profile.php?id=61591387936775" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.75-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
-        אירועים והפקות בפייסבוק
-      </a>
     </div>
   </div>
 </section>
@@ -506,6 +497,11 @@
     <p class="foot-note"><b>ברזילי אירועים ונופש</b> — פסטיבלי מורשת ונופש מאורגן לקהל הגמלאים · ללא דמי ביטול עד 3 ימים לפני האירוע<br>טלפון 03-559-0765 · וואטסאפ 054-236-2364 · <a href="mailto:info@barzilay-e.com">info@barzilay-e.com</a> · כל הזכויות שמורות</p>
   </div>
 </footer>
+
+<nav class="mbar" aria-label="יצירת קשר מהירה">
+  <a class="m-wa" href="https://wa.me/972542362364" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.13c-.24.68-1.42 1.32-1.96 1.36-.5.05-.5.41-3.16-.66-2.66-1.07-4.32-3.8-4.45-3.97-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.9.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.24.58.81 2 .88 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.27.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.22 1.38.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.44.2.5.31.07.11.07.64-.17 1.32Z"/></svg>וואטסאפ</a>
+  <a class="m-call" href="tel:+97235590765"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8Z"/></svg>התקשרו</a>
+</nav>
 
 <!-- lightbox -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="תצוגה מוגדלת של פלייר">
