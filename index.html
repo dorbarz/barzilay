@@ -63,7 +63,7 @@
   @media(max-width:820px){.topbar nav{display:none;}}
 
   /* hero */
-  .hero{position:relative;background:radial-gradient(120% 90% at 50% -10%, #16544D 0%, var(--teal) 55%, #0A2E2B 100%);color:var(--parchment);text-align:center;padding:66px 0 88px;overflow:hidden;}
+  .hero{position:relative;background:linear-gradient(180deg,rgba(14,59,55,.80) 0%,rgba(14,59,55,.86) 55%,rgba(10,46,43,.96) 100%),url(photos/hero.jpg) center 35%/cover no-repeat,var(--teal);color:var(--parchment);text-align:center;padding:66px 0 88px;overflow:hidden;}
   .hero::before{content:"";position:absolute;inset:0;opacity:.10;pointer-events:none;
     background-image:linear-gradient(45deg,var(--gold) 1px,transparent 1px),linear-gradient(-45deg,var(--gold) 1px,transparent 1px);
     background-size:34px 34px;mask-image:radial-gradient(120% 100% at 50% 0,#000 30%,transparent 78%);}
@@ -71,6 +71,7 @@
   .hero-logo{width:min(360px,80vw);margin:0 auto 24px;background:#FAF4E6;border-radius:20px;padding:22px 26px;
     border:1px solid rgba(198,154,62,.55);box-shadow:0 14px 38px rgba(0,0,0,.3);}
   .hero-logo img{width:100%;display:block;}
+  @media(max-width:520px){.hero{padding:36px 0 52px;}.hero-logo{width:min(210px,58vw);padding:14px 16px;margin-bottom:18px;}.hero .cta-row{margin-top:24px;}}
   .eyebrow{font-weight:600;letter-spacing:.12em;font-size:.875rem;color:var(--gold-bright);margin-bottom:16px;}
   .eyebrow .sep{opacity:.6;margin:0 7px;}
   .hero h1{font-weight:900;font-size:clamp(2.375rem,7vw,4.5rem);color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.25);letter-spacing:-.01em;}
@@ -184,6 +185,16 @@
   @media(max-width:520px){.past-grid{grid-template-columns:repeat(2,1fr);}.past-tile img{height:200px;}}
   .car-note{text-align:center;color:#5C513F;font-size:.875rem;margin-top:16px;max-width:640px;margin-inline:auto;}
 
+  /* moments photo grid */
+  .moments{padding:76px 0;}
+  .mgrid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:12px;}
+  .mtile{position:relative;border:0;padding:0;border-radius:14px;overflow:hidden;cursor:zoom-in;background:var(--parchment-deep);box-shadow:0 8px 22px rgba(14,59,55,.14);}
+  .mtile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+  .mtile:hover img{transform:scale(1.04);}
+  .mtile.big{grid-column:span 2;grid-row:span 2;}
+  .mtile.tall{grid-row:span 2;}
+  .mtile:focus-visible{outline:3px solid var(--teal);outline-offset:3px;}
+  @media(max-width:820px){.mgrid{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:8px;}}
   /* partners */
   .partners{text-align:center;padding:56px 0;}
   .partners .kicker{margin-bottom:8px;}
@@ -223,7 +234,7 @@
   /* lightbox */
   .lb{position:fixed;inset:0;z-index:100;background:rgba(10,25,23,.94);display:none;align-items:center;justify-content:center;padding:24px;}
   .lb.open{display:flex;}
-  .lb img{max-width:min(92vw,620px);max-height:90vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+  .lb img{max-width:min(92vw,1100px);max-height:90vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5);}
   .lb-close{position:absolute;top:18px;left:18px;width:52px;height:52px;border-radius:50%;border:2px solid rgba(245,236,216,.5);
     background:rgba(245,236,216,.15);color:#fff;font-size:1.75rem;cursor:pointer;line-height:1;}
   .lb-close:hover,.lb-close:focus-visible{background:rgba(245,236,216,.35);}
@@ -259,6 +270,7 @@
     <a class="brand-mini" href="#top"><span class="khatam" aria-hidden="true"></span>ברזילי אירועים ונופש</a>
     <nav aria-label="ניווט ראשי">
       <a href="#gallery">ההפקות הקרובות</a>
+      <a href="#moments">רגעים</a>
       <a href="#about">אודות</a>
       <a href="#care">המעטפת שלנו</a>
       <a href="#prod">עמודי הפייסבוק</a>
@@ -361,6 +373,27 @@
     </div>
   </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- moments -->
+<section class="moments reveal" id="moments">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">ככה זה נראה אצלנו</p>
+      <h2>רגעים מההפקות</h2>
+      <p>אולמות מלאים, רחבות רוקדות ואווירה של משפחה אחת גדולה. לחצו להגדלה</p>
+    </div>
+    <div class="mgrid">
+      <button type="button" class="mtile big" onclick="openLb('photos/hall-full.jpg')"><img loading="lazy" src="photos/hall-full.jpg" alt="אולם מלא באורחים בפסטיבל פניני מרוקו באילת" /></button>
+      <button type="button" class="mtile " onclick="openLb('photos/dance-1.jpg')"><img loading="lazy" src="photos/dance-1.jpg" alt="אורחים רוקדים מול הבמה" /></button>
+      <button type="button" class="mtile tall" onclick="openLb('photos/taboon.jpg')"><img loading="lazy" src="photos/taboon.jpg" alt="אפיית פיתות טריות בטאבון באחת ההפקות" /></button>
+      <button type="button" class="mtile " onclick="openLb('photos/hall-singer.jpg')"><img loading="lazy" src="photos/hall-singer.jpg" alt="זמרת מופיעה מול אולם מלא" /></button>
+      <button type="button" class="mtile " onclick="openLb('photos/stage-brand.jpg')"><img loading="lazy" src="photos/stage-brand.jpg" alt="זמר על הבמה, הלוגו של ברזילי על המסך" /></button>
+      <button type="button" class="mtile " onclick="openLb('photos/dance-2.jpg')"><img loading="lazy" src="photos/dance-2.jpg" alt="קהל רוקד ושר עם הזמרת" /></button>
+      <button type="button" class="mtile " onclick="openLb('photos/hall-wide.jpg')"><img loading="lazy" src="photos/hall-wide.jpg" alt="האולם בפסטיבל, מבט רחב" /></button>
+      <button type="button" class="mtile " onclick="openLb('photos/stage-pink.jpg')"><img loading="lazy" src="photos/stage-pink.jpg" alt="רחבת ריקודים מלאה ליד הבמה" /></button>
     </div>
   </div>
 </section>
