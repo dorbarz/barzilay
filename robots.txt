@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /tools/
 Disallow: /media/
 
-Sitemap: https://dorbarz.github.io/barzilay/sitemap.xml
+Sitemap: https://barzilay-e.com/sitemap.xml
