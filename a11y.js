@@ -240,7 +240,7 @@
     html += '<div class="a11y-sep"></div>';
     html += '<button type="button" class="a11y-opt" data-reset="1"><span class="ic" aria-hidden="true">↺</span>איפוס הגדרות</button>';
     html += '<div class="a11y-sep"></div>';
-    html += '<a class="a11y-link" href="accessibility.html">הצהרת נגישות מלאה</a>';
+    html += '<a class="a11y-link" href="/accessibility.html">הצהרת נגישות מלאה</a>';
     html += '<a class="a11y-link" href="tel:+97235590765">נתקלתם בבעיה? התקשרו: 03-559-0765</a>';
     panel.innerHTML = html;
 
